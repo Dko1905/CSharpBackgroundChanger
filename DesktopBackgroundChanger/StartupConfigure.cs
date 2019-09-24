@@ -16,5 +16,20 @@ namespace DesktopBackgroundChanger
         {
             InitializeComponent();
         }
+
+        private void ChoseConfigButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            MainScreen MSForm = new MainScreen(ConfigurationManager.GetConfig(openFileDialog1.OpenFile()));
+            MSForm.Show();
+        }
+
+        private void CreateConfigButton_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, string> s = new Dictionary<string, string>();
+            s.Add("link", "https://www.reddit.com/r/wallpapers.json"); // deafoult link
+            Configure cForm = new Configure(s);
+            cForm.Show();
+        }
     }
 }

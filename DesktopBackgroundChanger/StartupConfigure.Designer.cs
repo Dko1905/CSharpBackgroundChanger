@@ -28,61 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SetButton = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.ChoseConfigButton = new System.Windows.Forms.Button();
+            this.CreateConfigButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(158, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(528, 35);
-            this.textBox1.TabIndex = 0;
-            // 
-            // SetButton
-            // 
-            this.SetButton.Location = new System.Drawing.Point(583, 131);
-            this.SetButton.Name = "SetButton";
-            this.SetButton.Size = new System.Drawing.Size(103, 47);
-            this.SetButton.TabIndex = 1;
-            this.SetButton.Text = "Set";
-            this.SetButton.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Enabled = false;
-            this.radioButton1.Location = new System.Drawing.Point(571, 92);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(115, 33);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Reddit";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 36);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Link:";
+            this.label1.Size = new System.Drawing.Size(181, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chose a config or create new config.";
+            // 
+            // ChoseConfigButton
+            // 
+            this.ChoseConfigButton.Location = new System.Drawing.Point(15, 25);
+            this.ChoseConfigButton.Name = "ChoseConfigButton";
+            this.ChoseConfigButton.Size = new System.Drawing.Size(120, 23);
+            this.ChoseConfigButton.TabIndex = 1;
+            this.ChoseConfigButton.Text = "Chose config.";
+            this.ChoseConfigButton.UseVisualStyleBackColor = true;
+            this.ChoseConfigButton.Click += new System.EventHandler(this.ChoseConfigButton_Click);
+            // 
+            // CreateConfigButton
+            // 
+            this.CreateConfigButton.Location = new System.Drawing.Point(15, 55);
+            this.CreateConfigButton.Name = "CreateConfigButton";
+            this.CreateConfigButton.Size = new System.Drawing.Size(120, 23);
+            this.CreateConfigButton.TabIndex = 2;
+            this.CreateConfigButton.Text = "Create new config";
+            this.CreateConfigButton.UseVisualStyleBackColor = true;
+            this.CreateConfigButton.Click += new System.EventHandler(this.CreateConfigButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "config.json";
+            this.openFileDialog1.Filter = "Json Files| *.json; *.JSON";
+            this.openFileDialog1.Title = "Chose Config";
             // 
             // StartupConfigure
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(343, 202);
+            this.Controls.Add(this.CreateConfigButton);
+            this.Controls.Add(this.ChoseConfigButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.SetButton);
-            this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "StartupConfigure";
-            this.Text = "Form1";
+            this.Text = "Chose Config File.";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,10 +87,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button SetButton;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ChoseConfigButton;
+        private System.Windows.Forms.Button CreateConfigButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

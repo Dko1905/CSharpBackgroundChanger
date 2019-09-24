@@ -12,9 +12,16 @@ namespace DesktopBackgroundChanger
 {
     public partial class MainScreen : Form
     {
-        public MainScreen()
+        private Dictionary<string, string> _config;
+        public MainScreen(Dictionary<string, string> config)
         {
             InitializeComponent();
+            _config = config;
+        }
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
