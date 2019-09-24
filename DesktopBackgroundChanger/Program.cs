@@ -16,7 +16,7 @@ namespace DesktopBackgroundChanger
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartupConfigure());
+            Application.Run(new Form1());
         }
     }
 }

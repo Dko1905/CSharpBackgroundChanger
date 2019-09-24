@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace DesktopBackgroundChanger
 {
-    public partial class MainScreen : Form
+    public partial class Form1 : Form
     {
-        private Dictionary<string, string> _config;
-        public MainScreen(Dictionary<string, string> config)
+        public Form1()
         {
             InitializeComponent();
-            _config = config;
-        }
-
-        private void StartButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
