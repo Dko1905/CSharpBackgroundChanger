@@ -14,7 +14,7 @@ namespace DesktopBackgroundChanger
     {
 
 
-        public static async Task<IEnumerable<string>>  getImgList() // Get json from reddit and sort them and give a List with only the picture links.
+        public static async Task<IEnumerable<string>>  GetImgList() // Get json from reddit and sort them and give a List with only the picture links.
         {
             List<string> imgLinks = new List<string>();
             JObject json;
@@ -29,7 +29,7 @@ namespace DesktopBackgroundChanger
             {
                 throw new System.ArgumentException(json["error"].ToString() + " ERROR "+ json["message"].ToString());
             }
-            var linqQuarry = from pictureData in json["data"]["children"]
+            var linqQuarry = from pictureData in json["data"]["children"].AsParallel()
                              let url = pictureData["data"]["url"].ToObject<string>()
                              where url.Contains(".png") ||
                                    url.Contains(".jpg") ||
@@ -37,10 +37,21 @@ namespace DesktopBackgroundChanger
                              select url;
             return linqQuarry;
         }
-
-        public static async void saveImgsToCache()
+        public static void ClearCache()
         {
-            IEnumerable<string> imgLinks = await getImgList();
+            if (!Directory.Exists(@".\cache\"))
+                return;
+            DirectoryInfo di = new DirectoryInfo(@".\cache\");
+            FileInfo[] files = di.GetFiles();
+            foreach(FileInfo file in files)
+            {
+                File.Delete(file.FullName);
+            }
+        }
+        
+        public static async void SaveImgsToCache()
+        {
+            IEnumerable<string> imgLinks = await GetImgList();
             
             if (!Directory.Exists(@".\cache\"))
             {

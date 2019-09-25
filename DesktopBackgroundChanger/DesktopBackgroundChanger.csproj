@@ -61,7 +61,6 @@
     <Compile Include="EditConfigForm.Designer.cs">
       <DependentUpon>EditConfigForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="externelCsFiles\CacheManager.cs" />
     <Compile Include="externelCsFiles\ConfigurationManager.cs" />
     <Compile Include="externelCsFiles\DesktopChanger.cs" />
     <Compile Include="externelCsFiles\GetImgFromReddit.cs" />

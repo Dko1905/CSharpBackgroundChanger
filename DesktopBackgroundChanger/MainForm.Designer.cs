@@ -33,6 +33,7 @@
             this.RefreshButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
             this.StatusBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // StartButton
@@ -79,18 +80,28 @@
             // 
             // StatusBox
             // 
-            this.StatusBox.Enabled = false;
             this.StatusBox.Location = new System.Drawing.Point(306, 161);
             this.StatusBox.Name = "StatusBox";
+            this.StatusBox.ReadOnly = true;
             this.StatusBox.Size = new System.Drawing.Size(75, 20);
             this.StatusBox.TabIndex = 4;
             this.StatusBox.Text = "Nothing";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(226, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Current Status";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 193);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.StatusBox);
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.RefreshButton);
@@ -110,6 +121,7 @@
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.TextBox StatusBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

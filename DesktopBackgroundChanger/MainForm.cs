@@ -59,11 +59,11 @@ namespace DesktopBackgroundChanger
             } 
         }
 
-        public void setStatus(string text)
+        public void SetStatus(string text)
         {
             if (InvokeRequired)
             {
-                this.Invoke(new Action<string>(setStatus), new object[] { text });
+                this.Invoke(new Action<string>(SetStatus), new object[] { text });
                 return;
             }
             StatusBox.Text = text;
@@ -71,12 +71,13 @@ namespace DesktopBackgroundChanger
 
         private void doThing()
         {
-            ImgGetter.saveImgsToCache();
-            setStatus("Finished!");
+            ImgGetter.SaveImgsToCache();
+            SetStatus("Finished!");
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
+            ImgGetter.ClearCache();
             StatusBox.Text = "Started!";
             Task.Run(doThing);
         }
