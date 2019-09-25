@@ -10,12 +10,17 @@ namespace DesktopBackgroundChanger
 {
     static class ConfigurationManager
     {
+        public static Dictionary<string, string> GetDefaultConfig()
+        {
+            Dictionary<string, string> conf = new Dictionary<string, string>();
+            conf.Add("link", "https://www.reddit.com/r/wallpapers.json");
+            conf.Add("changeTimeout", "1000");
+            return conf;
+        } 
         public static Dictionary<string, string> GetConfig(string path)
         {
             string jsonString = File.ReadAllText(path, Encoding.UTF8);
-            Dictionary<string, string> conf = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
-            jsonString = null; // no need to have memory to the string.
-            return conf;
+            return JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
         }
         public static void SaveConfig(Dictionary<string, string> config, string path)
         {
@@ -28,10 +33,7 @@ namespace DesktopBackgroundChanger
             {
                 jsonString = sr.ReadToEnd();
             }
-            
-            Dictionary<string, string> conf = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
-            jsonString = null; // no need to have memory to the string.
-            return conf;
+            return JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
         }
         public static void SaveConfig(Dictionary<string, string> config, Stream fs)
         {
@@ -39,6 +41,7 @@ namespace DesktopBackgroundChanger
             {
                 sw.Write(JsonConvert.SerializeObject(config));
             }
+            fs.Close();
         }
     }
 }

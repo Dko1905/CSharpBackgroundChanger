@@ -55,6 +55,13 @@
     <Compile Include="ChoseConfigForm.Designer.cs">
       <DependentUpon>ChoseConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditConfigForm.Designer.cs">
+      <DependentUpon>EditConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="externelCsFiles\CacheManager.cs" />
     <Compile Include="externelCsFiles\ConfigurationManager.cs" />
     <Compile Include="externelCsFiles\DesktopChanger.cs" />
     <Compile Include="externelCsFiles\GetImgFromReddit.cs" />
@@ -68,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ChoseConfigForm.resx">
       <DependentUpon>ChoseConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditConfigForm.resx">
+      <DependentUpon>EditConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

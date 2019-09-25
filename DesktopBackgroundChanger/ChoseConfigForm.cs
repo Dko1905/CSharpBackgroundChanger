@@ -24,8 +24,7 @@ namespace DesktopBackgroundChanger
 
         private void CreateConfigButton_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string> config = new Dictionary<string, string>();
-            config.Add("link", "https://www.reddit.com/r/wallpapers.json");
+            Dictionary<string, string> config = ConfigurationManager.GetDefaultConfig();
             MainForm.Config = config;
             saveFileDialog1.ShowDialog();
             
